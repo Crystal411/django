@@ -1,4 +1,4 @@
 "# django" 
 run with:
-python manage.py migration
-python manage.py runserver
+" python manage.py migration " then
+" python manage.py runserver "
