@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ECharts 关系图</title>
+<!--
+    <script src="static/js/jquery-3.2.1.js"></script>
+    <script src="http://echarts.baidu.com/gallery/vendors/echarts/echarts-all-3.js"></script>-->
+    <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+
+   <!-- <script src="/static/js/echarts.js"></script>-->
+</head>
+
+<body>
+<form action="/show/" method="post">
+            {% csrf_token %}
+            <P>
+                <label >要查询的关键词(示例:f22)</label>
+                <input type="text" name ='keyWord'/>
+            </P>
+            <p><input type="submit" value="查询"/></p>
+        </form>
+<div id="main" style="width:1000px;height:800px"></div>
+<script type="text/javascript">
+    var myChart = echarts.init(document.getElementById('main'));
+
+    var entity_rel=JSON.parse({{ kgList|safe }});  /*获取后端发过来的要显示的数据,并转换成Json对象*/
+   /* for (i=0;i<entity_rel.length();i++)
+        console.log(entity_rel[i])*/
+    var nodes=[];
+    var idtable=[];/*存储实体id的表*/
+    var rels=[];
+    for (var i in entity_rel){
+        /*头节点*/
+         let eachN={};
+        eachN['name']=entity_rel[i]["fields"]["fromId"];
+
+        if(idtable.indexOf(eachN['name'])<=-1){ /*判断该节点是否已经在其中*/
+            idtable.push(eachN['name']);
+            nodes.push(eachN);
+
+        }
+        /*尾结点*/
+        eachN={};
+        eachN['name']=entity_rel[i]["fields"]["toId"];
+
+        if(idtable.indexOf(eachN['name'])<=-1){ /*判断该节点是否已经在其中*/
+            idtable.push(eachN['name']);
+            nodes.push(eachN);
+
+        }
+
+        /*边*/
+        let edge={};
+        edge['name']=entity_rel[i]["fields"]["rel"];
+        edge['source']=entity_rel[i]['fields']['fromId'];
+        edge['target']=entity_rel[i]['fields']['toId'];
+        rels.push(edge);
+    }
+    console.log(nodes);
+    console.log(rels)
+    /*测试下面的Echarts设置的问题*/
+    var tnodes=[
+        {name:'node01'},
+        {name:'node02'}
+    ];
+    var tedges=[
+        {source:'node01',target:'node02',name:'link01'}
+    ]
+
+    option = {
+        // 图的标题
+        title: {
+            text: 'MilitaryShow'
+        },
+        // 提示框的配置
+        tooltip: {
+            formatter: function (x) {
+                return x.data.name;
+            }
+        },
+        // 工具箱
+        toolbox: {
+            // 显示工具箱
+            show: true,
+            feature: {
+                mark: {
+                    show: true
+                },
+                // 还原
+                restore: {
+                    show: true
+                },
+                // 保存为图片
+                saveAsImage: {
+                    show: true
+                }
+            }
+        },
+        series: [{
+            type: 'graph', // 类型:关系图
+            layout: 'force', //图的布局，类型为力导图
+            symbolSize: 40, // 调整节点的大小
+            roam: true, // 是否开启鼠标缩放和平移漫游。默认不开启。如果只想要开启缩放或者平移,可以设置成 'scale' 或者 'move'。设置成 true 为都开启
+            edgeSymbol: ['circle', 'arrow'],
+            edgeSymbolSize: [2, 10],
+            edgeLabel: {
+                normal: {
+                    show:true,
+                    textStyle: {
+                        fontSize: 40
+                    }
+                }
+            },
+            force: {
+                repulsion: 2500,
+                edgeLength: [10, 50]
+            },
+            draggable: true,
+            lineStyle: {
+                normal: {
+                    show:true,
+                    width: 2,
+                    color: '#FE8463',
+                }
+            },
+            edgeLabel: {
+                normal: {
+                    show: true,
+                    formatter: function (x) {
+                        return x.data.name;
+                    },
+                    textStyle:{
+                        fontSize: 20
+                    }
+                }
+            },
+            label: {
+                normal: {
+                    show: true,
+                    textStyle: {}
+                }
+            },
+
+            // 数据
+            data: nodes,
+            links: rels,
+        }]
+    };
+    myChart.setOption(option);
+
+</script>
+</body>
+</html>
