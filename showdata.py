@@ -11,7 +11,8 @@ def getlist(search,result):
             ]
     
 
-    path = "D:/pycode/show"
+    path = "MilitaryShow/static"
+
     directory = path+"/"+str(search) #打开关键字对应目录
     files = os.listdir(directory)#列出该目录下所有文件名
     for filename in files:
@@ -20,7 +21,7 @@ def getlist(search,result):
         title=filename[:length-6]
         description="abstract"
         keywords="key1 key2"
-        origin=directory+"/"+filename
+        origin="localhost:8000"+"/"+"static"+"/"+search+"/"+filename
         dictt={
             "title":title,
             "description":description,
