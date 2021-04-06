@@ -1,0 +1,151 @@
+function $(id){if(document.getElementById){return eval('document.getElementById("'+id+'")')}else{return eval('document.all.'+id)}}
+if(typeof(columnbar)!="function"){
+
+  var columnbar = function(columnObj){
+    
+	//初始化参数
+	var BarSrc = columnObj[0];//栏目条地址
+    var BarType = (BarSrc=="")?"":columnObj[0].substring(columnObj[0].length-3).toLowerCase();//栏目条素材文件类型
+    var BarUrl = columnObj[1];//栏目条链接
+	var BarWidth = columnObj[2];//栏目条宽度
+	var BarHeight = columnObj[3];//栏目条高度
+	var BarLeft = columnObj[4];//栏目条左定位
+	var BarTop = columnObj[5];//栏目条上定位
+    var BarMc = columnObj[6];//栏目条flash素材回放控制
+	var ExtSrc = columnObj[7];//触发条地址
+	var ExtType = (ExtSrc=="")?"":columnObj[7].substring(columnObj[7].length-3).toLowerCase();//触发条素材类型
+    var ExtUrl = columnObj[8];//触发条链接
+	var ExtWidth = columnObj[9];//触发条宽度
+	var ExtHeight = columnObj[10];//触发条高度
+	var ExtLeft = columnObj[11];//触发条左定位
+	var ExtTop = columnObj[12];//触发条上定位
+    var ExtMc = columnObj[13];//触发条flash素材回放控制
+	var columnId = columnObj[14];//栏目条ID（以此区分同页面不同位置栏目条）
+	var TimeOutNum = columnObj[15];//触发播放时间
+    var ifHideNow = columnObj[16];//触发隐藏设置
+	var ifClsBtn = columnObj[17];//是否显示关闭按钮
+	var ClsSrc = columnObj[18];//关闭按钮背景图
+	var ClsWidth = columnObj[19];//关闭按钮宽度
+	var ClsHeight = columnObj[20];//关闭按钮高度
+	var ClsLeft = columnObj[21];//关闭按钮左定位
+	var ClsTop = columnObj[22];//关闭按钮上定位
+    var ClsTxt = columnObj[23];//关闭按钮显示文字
+	var ClsBg = columnObj[24];//关闭按钮背景色
+	var ClsColor = columnObj[25];//关闭按钮文本色
+	var CodeStr = columnObj[26];//触发次数监测代码
+	var IPNum = columnObj[27];//触发IP限制
+	var DoNum = columnObj[28];//触发次数限制
+
+    //构造css
+    document.write('<style type="text/css">\
+    <!--\
+    #BarDiv_'+columnId+'{position:absolute;width:'+BarWidth+'px;height:'+BarHeight+'px;left:'+BarLeft+'px;top:'+BarTop+'px;overflow:hidden;font-size:12px;z-index:10;display:block;}\
+	#ExtDiv_'+columnId+'{position:absolute;width:'+ExtWidth+'px;height:'+ExtHeight+'px;left:'+ExtLeft+'px;top:'+ExtTop+'px;overflow:hidden;font-size:12px;z-index:999;display:none;}\
+	#ClsDiv_'+columnId+'{position:absolute;width:'+ClsWidth+'px;height:'+ClsHeight+'px;left:'+ClsLeft+'px;top:'+ClsTop+'px;overflow:hidden;font-size:12px;z-index:999;display:none;background:url('+ClsSrc+') no-repeat center '+ClsBg+';color:'+ClsColor+';line-height:'+ClsHeight+'px;text-align:center;cursor:pointer;}\
+    -->\
+    </style>');
+
+    //构造html
+	//Bar
+	if(BarType == "swf"){
+	  document.write('<div id="BarDiv_'+columnId+'" ></div>');
+	  var of = new sinaFlash(BarSrc, "BarSwf_"+columnId, BarWidth, BarHeight, "7", "", false, "High");
+	  of.addParam("wmode", "transparent");
+	  of.addParam("allowScriptAccess", "always");
+	  //of.addVariable("adlink", escape(BarUrl));
+	  of.write("BarDiv_"+columnId);
+	}
+	else if( BarType == "jpg" || BarType == "gif" ){
+	  document.write('<div id="BarDiv_'+columnId+'" ><a href="'+BarUrl+'" target="_blank"><img src="'+BarSrc+'" width="'+BarWidth+'" height="'+BarHeight+'" border="0" /></a></div>');
+	}
+	//Ext
+	if(ExtType == "swf"){
+	  document.write('<div id="ExtDiv_'+columnId+'" ></div>');
+	  var of = new sinaFlash(ExtSrc, "ExtSwf_"+columnId, ExtWidth, ExtHeight, "7", "", false, "High");
+	  of.addParam("wmode", "transparent");
+	  of.addParam("allowScriptAccess", "always");
+	  //of.addVariable("adlink", escape(ExtUrl));
+	  of.write("ExtDiv_"+columnId);
+	}
+	else if( ExtType == "jpg" || ExtType == "gif" ){
+	  document.write('<div id="ExtDiv_'+columnId+'" ><a href="'+ExtUrl+'" target="_blank"><img src="'+ExtSrc+'" width="'+ExtWidth+'" height="'+ExtHeight+'" border="0" /></a></div>');
+	}
+	else if(ExtType == ""){}
+
+
+    if(ExtType!="" && ifClsBtn==1){document.write('<div id="ClsDiv_'+columnId+'">'+ClsTxt+'</div>');}
+    
+	if($("BarDiv_"+columnId).parentNode){var pNode=$("BarDiv_"+columnId).parentNode;}
+    if($("BarDiv_"+columnId)){var bNode=$("BarDiv_"+columnId);}
+	if($("BarSwf_"+columnId)){var bSwf=$("BarSwf_"+columnId);}
+	if($("ExtDiv_"+columnId)){var eNode=$("ExtDiv_"+columnId);}
+	if($("ExtSwf_"+columnId)){var eSwf=$("ExtSwf_"+columnId);}
+	if($("ClsDiv_"+columnId)){var cNode=$("ClsDiv_"+columnId);}
+	
+	pNode.style.display = "block";
+	pNode.style.position = "relative";
+	pNode.style.overflow = "visible";
+    
+	var TimeOut;
+    var isShow=false;
+	var extTimes=0;
+
+    //获取cookie
+    function getAdCookie(N){
+	  var c=document.cookie.split("; ");
+	  for(var i=0;i<c.length;i++){
+		var d=c[i].split("=");
+		if(d[0]==N)return unescape(d[1]);
+	  }	return '';
+	}
+	//设置cookie
+	function setAdCookie(N,V,Q){
+    	var L=new Date();
+		var z=new Date(L.getTime()+Q*60000);
+		document.cookie=N+"="+escape(V)+";path=/;expires="+z.toGMTString()+";";
+	}
+	
+    //显示触发
+    function showExt(){
+      //IP限制
+	  if(IPNum!=""){
+        var cookie = getAdCookie("columnbar"+columnId);
+		    cookie = cookie==""?1:++cookie;
+	        if(cookie>IPNum) return;
+	        setAdCookie("columnbar"+columnId,cookie,1440);
+	  }
+      //次数限制
+      if(DoNum!=""){
+		  ++extTimes;
+	      if(extTimes>DoNum) return;
+	  }
+
+	  if(isShow==false && ExtType != ""){
+		var objImg = new Image();
+		objImg.src = CodeStr+"&"+Math.random();
+	    clearTimeout(TimeOut);
+	    if(eNode){eNode.style.display = "block";cNode.style.display = "block";isShow=true;TimeOut=setTimeout(function(){hideShow();},TimeOutNum);}
+	    if(eSwf){if(ExtMc!=0){eSwf.TGotoFrame("main_mc",ExtMc);eSwf.TPlay("main_mc");eSwf.Rewind();eSwf.Play();}else{eSwf.Rewind();eSwf.Play();}}
+	  }
+
+    }
+
+
+   //隐藏触发
+   function hideShow(){clearTimeout(TimeOut);eNode.style.display = "none";cNode.style.display = "none";isShow=false;}
+
+
+   //动作设置
+   if(eNode){bNode.onmouseover=function(){showExt();}}
+   if(eNode){eNode.onmouseover=function(){showExt();}}
+   if(ifHideNow==1 && eNode){
+	  bNode.onmouseout=function(){if(isShow==true){hideShow();}}
+	  eNode.onmouseout=function(){if(isShow==true){hideShow();}}
+	}
+   if(ifClsBtn==1 && eNode){cNode.onclick=function(){if(isShow==true){hideShow();}}}
+
+
+
+  }
+
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0049)http://scitech.people.com.cn/img/szqh/data04.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
+
+<title>太空生活</title>
+</head>
+<body style="background:#004587;" marginwidth="0" marginheight="0">
+<table cellpadding="0" cellspacing="0" border="0">
+	<tbody><tr>
+		<td><select name="college_provid1" id="college_provid1" style="width:80px;"><option value="衣,http://scitech.people.com.cn/GB/132659/132660/132661/index.html,食,http://scitech.people.com.cn/GB/132659/132660/132662/index.html,住,http://scitech.people.com.cn/GB/132659/132660/132663/index.html,行,http://scitech.people.com.cn/GB/132659/132660/132664/index.html,医,http://scitech.people.com.cn/GB/132659/132660/132665/index.html,实验,http://scitech.people.com.cn/GB/132659/132660/132666/index.html,通讯,http://scitech.people.com.cn/GB/132659/132660/132667/index.html,工作,http://scitech.people.com.cn/GB/132659/132660/132668/index.html">太空生活</option></select>&nbsp;</td>
+		<td><select name="collegeid1" id="collegeid1" style="width:70px;"><option value="http://scitech.people.com.cn/GB/132659/132660/132661/index.html">衣</option><option value="http://scitech.people.com.cn/GB/132659/132660/132662/index.html">食</option><option value="http://scitech.people.com.cn/GB/132659/132660/132663/index.html">住</option><option value="http://scitech.people.com.cn/GB/132659/132660/132664/index.html">行</option><option value="http://scitech.people.com.cn/GB/132659/132660/132665/index.html">医</option><option value="http://scitech.people.com.cn/GB/132659/132660/132666/index.html">实验</option><option value="http://scitech.people.com.cn/GB/132659/132660/132667/index.html">通讯</option><option value="http://scitech.people.com.cn/GB/132659/132660/132668/index.html">工作</option></select>&nbsp;</td>
+		<td><input type="image" name="imageField" value="搜" src="./sz_search.jpg" onclick="multiLevelMenu_college2();"></td>
+	</tr>
+</tbody></table>
+<script>
+var arrSel_college1 = ['college_provid1','collegeid1'];
+
+menu_college =  [ '太空生活',[
+     '衣','http://scitech.people.com.cn/GB/132659/132660/132661/index.html',
+     '食','http://scitech.people.com.cn/GB/132659/132660/132662/index.html',
+     '住','http://scitech.people.com.cn/GB/132659/132660/132663/index.html',
+     '行','http://scitech.people.com.cn/GB/132659/132660/132664/index.html',
+     '医','http://scitech.people.com.cn/GB/132659/132660/132665/index.html',
+     '实验','http://scitech.people.com.cn/GB/132659/132660/132666/index.html',
+     '通讯','http://scitech.people.com.cn/GB/132659/132660/132667/index.html',
+     '工作','http://scitech.people.com.cn/GB/132659/132660/132668/index.html',
+     ]
+ ]
+     
+     function multiLevelMenu_college1(level){
+        obj=document.getElementById(arrSel_college1[level]);
+		if(obj)
+		{
+			subMenu_Name = "menu_college";
+			for(i=0;i<level;i++)
+			{
+				subMenu_Name += "[" + (document.getElementById(arrSel_college1[i]).selectedIndex*2 + 1) + "]";
+			}
+			
+			subMenu = eval(subMenu_Name);
+			//alert (subMenu_Name);
+			//if(!subMenu) return false;
+			
+			
+			sel_len = obj.length;
+			for(i=0;i<sel_len;i++)
+			{
+				obj.options.remove(0);
+			}
+
+			new_sel_len = Math.floor(subMenu.length/2);
+
+			for(i=0;i<new_sel_len;i++)
+			{
+				obj.options.add(new Option(subMenu[i*2],subMenu[i*2+1]));
+			}
+			
+			obj.onchange = Function("multiLevelMenu_college1(" + (level+1) + ")");
+
+			multiLevelMenu_college1(level+1);
+		}
+		else
+		{
+
+			return false;
+		}	
+     }
+     
+     function multiLevelMenu_college2(){
+        var i;
+	    switch(document.all.college_provid1.options[document.all.college_provid1.selectedIndex].text){
+	       case menu_college[document.all.college_provid1.selectedIndex*2]:
+	          { switch(document.all.collegeid1.options[document.all.collegeid1.selectedIndex].text){
+	                case menu_college[document.all.college_provid1.selectedIndex*2 + 1][document.all.collegeid1.selectedIndex*2]:
+	                   if(menu_college[document.all.college_provid1.selectedIndex*2 + 1][document.all.collegeid1.selectedIndex*2 + 1]){
+	                      window.open(menu_college[document.all.college_provid1.selectedIndex*2 + 1][document.all.collegeid1.selectedIndex*2 + 1]);
+	                   }
+	                   else alert('请做出您的选择!');
+	            } 
+	          }
+	    }
+     }
+     
+     multiLevelMenu_college1(0);
+</script>
+
+</body></html>

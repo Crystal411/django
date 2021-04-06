@@ -1,0 +1,129 @@
+@charset "utf-8";
+@media screen and (max-width: 1279px){
+    body{overflow-x:hidden}
+    .layout{width:1000px;min-width:1000px;}
+    /*header*/
+    .header{height:165px;}
+    .header .top_logo{width:209px;height:81px;}
+    .header .top_logo img{margin:43px 0 0 0;}
+    .header .zt_banner{margin-left:88px}
+    .header .zt_banner img.database{margin-top:30px;width:323px;}
+    .header .zt_banner img.xjp{margin-top:4px;width:180px;}
+    .header .databank span{width:156px;background-position:20px 10px;
+    background-size:19% auto;font-size:16px;margin-top:58px;}
+	.header .databank .dz{ width:170px;margin-top:91px;}    
+    /*rm-Headlines*/
+    .Headlines h1{height: 48px;font-size:36px;}
+	.Headlines h1 img{ width:1000px; height:auto;}
+	.Headlines div{ font-size:12px;}
+	.Headlines div a{ margin:0 5px;}
+    /*rm-main*/
+    .rm_main .col-1{width:678px;}
+    .rm_main .col-2{width:308px; height:443px;}
+    .picWrap1{width:678px;height:443px;}
+    .swiper-container-p1 .swiper-slide span{line-height:68px;height:62px;font-size:16px;}
+    .swiper-container-p1 .num1 i{bottom:8px;font-size:18px; left:46px;}
+    #prev1,#next1{bottom:17px;background-size:90% auto;}
+	.swiper-container-p1 .show {width: 62px;height: 62px;}
+	.active-index {font-size: 24px;}
+	.min a {height: 381px;overflow: hidden;}
+    .rm_main .col-2 h2{font-size:18px;line-height:24px;}
+    .rm_main .col-2 h2.A6{margin-top:23px}
+	#difang{bottom:0px;}
+    .list1 li,#difang li{font-size: 14px;margin-top:11px}
+    .list1 li span img{width:35%;height:auto;}
+	.list2 li,.list2 li.key{ width:240px; padding-left:0px; margin-left:13px; background:none; font-size:14px;}
+    /*section_Comment*/
+    img.cpc-img{width:296px;height: auto;}
+	.section_Comment{ height:480px;}
+    .section_Comment .Comment{width:680px;}
+    .section_Comment .cpc{width:296px;}
+    .Comment .col-1{width:360px;margin-top:10px;}
+    .Comment .col-2{width:300px;margin-top:10px}
+    .Comment .col-1 .scale_img img{width:100%;height: auto;}
+	.Comment .col-2 h3{ padding-top:10px;}
+    .Comment .col-2 p{padding:0 2px; font-size:14px; height:auto;}
+    .cpc_bg1{padding:0 1px;width:294px;}
+    .list3 li{line-height:22px;padding-top:5px;padding-bottom:5px; font-size:14px;}
+    .cpc_bg2 a{margin:0 8px; font-size:14px;}
+	.tit1 em.bzdown{ margin-left:1px;}
+	.Comment .col-1 p{ height:190px; margin-top:5px; line-height:36px; font-size:14px;}
+	.Comment .col-1 h4{ margin-top:5px; font-size:20px;}
+    /*Message_rmrb*/
+    .Message_rmrb .col-1{width:680px;}
+    .Message_rmrb .col-2{width:295px;}
+    .list4 li{margin:22px 4px 0 9px;font-size: 12px; width:211px;}
+    .list4 li b{font-size:14px;}
+    .Leader_switch_ly{height:50px;}
+    .Leader_switch_ly span{line-height:50px;}
+    .Leader_switch_ly em i{margin-top:5px;}
+    .list5{padding:8px 0}
+    .list5 li{width:15px;}
+    .list5 li span{height:87px;}
+	.list5 li p{ font-size:12px;}
+	.Leader_switch_con{ height:160px}
+    .rmrb{padding:16px 11px;width:273px;height:186px;}
+    .rmrb i{top:58px;}
+    .rmrb img{width:130px; height:186px;}
+	.rmrb img.tbpic{ margin-right:12px;}
+    .rmrb h4, .rmrb h3{width:112px;}
+    .rmrb h3{font-size:14px;line-height:18px;padding-bottom:10px}
+	.rmrbtxt{ width:295px; height:42px; background:#e8e8ea; line-height:42px; font-size:18px;color:#a6a6a8;}
+	.rmrbtxt span{ width:140px; display:inline-block; text-align:center;color:#cc3232; line-height:42px; font-size:14px;}
+	.rmrbtxt span a{color:#cc3232; margin-right:4px;}
+    /*section_Hotzt*/
+	.hotzt{ font-size:14px;}
+    .hotzt a{ width:19.7%;}
+	.hotzt a img{ display:none;}
+	.bav img{width:100%;height: auto;}
+	.bav .col-1{width:600px;}
+    .bav .col-1 .fl img{width:390px;height:80px;}
+	.bav .col-1 .fr img{width:195px;height:80px;}
+	.bav .col-2{ height:60px;line-height:120%;}
+	.bav .col-2 p a{ font-size:14px;}
+	.topping{ width:100%;}
+    /*Frame*/
+    .Classify span{margin:0 27px;}
+    .Repeat .col-1{width:613px;height:210px;padding:0 37px 0 30px}
+    .Repeat .col-2{width:298px; height:auto;}
+    .Repeat .col-1 p{margin-top:8px;font-size:12px;}
+    .news2{margin-top:20px}
+    .news2 h3{font-size:18px;line-height: 24px;}
+    .share1{margin-top:10px}
+    .list6 li{font-size:13px;padding:11px 0;line-height:22px}
+    .Repeat{margin-top:20px;margin-bottom:20px}
+    .picg1 li{width:300px;padding:0 21px;font-size:18px}
+    .picg1 li span,.picg1 li span img{width:300px;height:160px;}
+    .picg2 li{width:454px;margin-left:65px; font-size:18px;}
+    .picg2 li span,.picg2 li span img{width:227px;height:124px;}
+    .picg2 li span{margin-right:15px}
+    .picg3{margin-bottom:30px}
+    .picg3 li{width:484px;height:124px;margin-left:20px;line-height:28px;font-size:18px;}
+    .picg3 li span,.picg3 li span img{width:226px;height:124px;}
+    .picg3 li em{width:225px;padding-top:12px; font-size:14px;}
+    .picg4 li{width:312px;margin-left:30px;height:172px;}
+    .picg4 li img{margin-right:16px;width:116px;height:172px;}
+    .picg4 li b{font-size: 20px;line-height:26px;margin-top:15px}
+    .picg4 li span{font-size:14px;line-height: 24px;}
+    .picg4 li em{font-size:14px;line-height: 24px;margin-top:5px;}
+    .picg5 ul.w376{width:294px;}
+    .picg5 ul.w893{width:704px;}
+    .picg5 li{margin:7px 0 0 5px;}
+    .picg5 li.img1{margin-top:11px}
+    .picg5 li.img1 em a,.picg5 li.img1 span img{width:294px;height:180px;}
+    .picg5 li.img2 em a,.picg5 li.img2 span img{width:294px;height:241px;}
+    .picg5 li.img3 em a,.picg5 li.img3 span img{width:294px;height:241px;}
+    .picg5 li.img4 em a,.picg5 li.img4 span img{width:394px;height:241px;}
+    .picg5 li.img5 em a,.picg5 li.img5 span img{width:396px;height:180px;}
+    .picg5 li.img6 em a,.picg5 li.img6 span img{width:294px;height:180px;}
+    /*rm_introduction*/
+    .rm_introduction .col{width:480px;}
+    .synopsis{width:436px;padding:26px 17px 0 27px;}
+    .PeopleDaily ul{padding-top:0px; margin-top:-20px;}
+    .PeopleNetwork div{padding-bottom:30px}
+    .PeopleNetwork ul{padding-top:0px}
+    /*rm_under*/
+    .UnderCon img{padding:0 15px;width:13%;height: auto;}    
+	.bav .col-1 .fr{ height:80px;}
+	.Leader_switch li{ margin-left:15px;}
+}

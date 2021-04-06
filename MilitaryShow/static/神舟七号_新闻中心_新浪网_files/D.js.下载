@@ -1,0 +1,43 @@
+var LogUrl = ["http://stat1.yeazone.cn/", "http://stat1.yeazone.cn/"];
+var URL_LOG = LogUrl[Math.floor(Math.random() * LogUrl.length)];
+var URL_Root = "http://rm.sina.com.cn/yeazone/SINKJ1A1YEA080924A/";
+
+
+var DID = 93;
+var YZP = [
+	DID, 
+	10, 
+	69, 
+	"http://sina.allyes.com/main/adfclick?db=sina&bid=121734,173940,178904&cid=0,0,0&sid=166360&advid=358&camid=20292&show=ignore&url=http://www.rentauto.net/cms5root/pages/CARI/kycb/shen7/index.html",
+	0, 
+	0,
+	1200000,
+	0,
+	false,
+	URL_Root, 
+	URL_LOG, 
+	"A1", 
+	3, 
+	0,
+	3,
+	0, 
+	3, 
+	-10, 
+	3, 
+	-35, 
+	300, 
+	308, 
+	100, 
+	100,
+	true,
+	true,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	false,
+	950
+];
+document.write('<scr' + 'ipt language=javascript src="'+URL_Root+'src/YZPrismSina5.2.js"></scr' + 'ipt>');

@@ -5,7 +5,7 @@
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db.sqlite3</jdbc-url>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/../../newchange/django/db.sqlite3</jdbc-url>
     </data-source>
     <data-source source="LOCAL" name="Django default" uuid="93efb6de-4358-4f42-b4e0-9d398b3bfee7">
       <driver-ref>sqlite.xerial</driver-ref>

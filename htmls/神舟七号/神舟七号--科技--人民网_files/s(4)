@@ -1,0 +1,15 @@
+document.write("<SCRIPT LANGUAGE=\"Javascript\">\n");
+document.write("ADFHOST18358=\"http://pmm.people.com.cn\";\n");
+document.write("ADFCID18358=2286;\n");
+document.write("ADFBID18358=18358;\n");
+document.write("ADFUSER18358=\"http://pmm.people.com.cn/c?d=people&i=z2286,991618,18358&k=&p=0&v=57802636&rf=http%3A%2F%2Fwww%2Epeople%2Ecom%2Ecn%2F&u=http://capital.people.com.cn/n1/2021/0106/c405954-31991261.html\";\n");
+document.write("</SCR"+"IPT>\n");
+document.write("<script type=\"text/javascript\">\n");
+document.write("var picUrl=\"ct1280115-210201.jpg\";\n");
+document.write("var picwidth=1280;\n");
+document.write("var picheight=115;\n");
+document.write("var thirdlink=\"\";\n");
+document.write("var parLeft=picwidth-38;\n");
+document.write("\n");
+document.write("document.write(\"<div style='overflow:hidden; position:relative; margin:20px 0px 0px 0px;width:100%;'><div style='overflow:hidden;'><a href='\"+ADFUSER18358+\"' target='_blank'><img src='http://www.people.com.cn/adv/\"+picUrl+\"' width='\"+picwidth+\"px' height='\"+picheight+\"px' border=0 alt=''></a></div><div style='position:absolute; right:0px; top:0px; z-index:9999; width:39px;'><img src='\"+thirdlink+\"' style='display:none;width:0;height:0' /></div></div>\");\n");
+document.write("</Scr"+"ipt>");

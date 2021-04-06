@@ -1,0 +1,203 @@
+function $(id){if(document.getElementById){return eval('document.getElementById("'+id+'")')}else{return eval('document.all.'+id)}}
+//css
+var miniDL_css='<style type="text/css">\
+            <!--\
+            #miniDL_left{position:absolute;width:20px;height:350px;top:16px;left:0;overflow:hidden;display:none;font-size:12px;}\
+			#miniDL_left_cls{position:absolute;width:20px;top:360px;left:0;overflow:hidden;display:none;line-height:18px;cursor:pointer;background:#ccc;text-align:center;overflow:hidden;font-size:12px;}\
+            #miniDL_right{position:absolute;width:20px;height:350px;top:16px;right:0;overflow:hidden;display:none;font-size:12px;}\
+            #miniDL_right_cls{position:absolute;width:20px;top:360px;right:0;overflow:hidden;display:none;line-height:18px;cursor:pointer;background:#ccc;text-align:center;overflow:hidden;font-size:12px;}\
+			#miniDL_out{position:absolute;width:585px;height:90px;top:201px;left:20px;overflow:hidden;display:none;font-size:12px;}\
+            #miniDL_cls{position:absolute;width:50px;height:20px;text-align:center;line-height:22px;background:#ccc;font-weight:bold;cursor:pointer;top:291px;left:553px;border:1px solid #000;overflow:hidden;display:none;font-size:12px;}\
+            -->\
+            </style>';
+document.write(miniDL_css);
+//html
+var miniDL_html='\
+             <div id="miniDL_left"></div>\
+             <div id="miniDL_left_cls" title="关 闭">关闭</div>\
+             <div id="miniDL_right"></div>\
+			 <div id="miniDL_right_cls" title="关 闭">关闭</div>\
+             <div id="miniDL_out"></div>\
+			 <div id="miniDL_cls" title="关 闭">关 闭</div>';
+var miniDL_st;
+var miniDL_init_st;
+var Extswitch=true;
+var doclose=false;
+//流媒体判断函数
+function ckeFloat(){
+  if (typeof(ifshowbig)=="undefined"){Extswitch=false;}
+  else if (typeof(closeall)=="undefined"){Extswitch=ifshowbig;}
+  else{
+	  if(closeall==true){Extswitch=!ifshowbig;}
+	  else{Extswitch=ifshowbig;}
+	}
+  }
+//显示扩展flash
+function show_out(){
+  ckeFloat();
+  if(!Extswitch && !doclose){
+  	 clearTimeout(miniDL_st);
+	 $("miniDL_out").style.display="block";
+	 $("miniDL_cls").style.display="block";
+	 if($("miniDL_out_swf")){$("miniDL_out_swf").Rewind();}
+	 if($("miniDL_out_swf")){$("miniDL_out_swf").Play();}
+	 miniDL_st=setTimeout("hide_out()",5000);
+   }
+ }
+ //关闭mini对联
+function hide_miniDL(){
+	$("miniDL_left").style.display="none";
+	$("miniDL_right").style.display="none";
+	$("miniDL_left_cls").style.display="none";
+	$("miniDL_right_cls").style.display="none";
+	$("miniDL_out").style.display="none";
+	$("miniDL_cls").style.display="none";
+    if($("miniDL_out_swf")){$("miniDL_out_swf").Stop();}
+ }
+ //隐藏扩展flash
+function hide_out(){
+	$("miniDL_out").style.display="none";
+	$("miniDL_cls").style.display="none";
+    if($("miniDL_out_swf")){$("miniDL_out_swf").Stop();}
+ }
+ //构造函数
+function init_miniDL(){
+  ckeFloat();
+  if(!Extswitch){
+	clearTimeout(miniDL_init_st);
+	$("miniDL_left").style.display="block";
+	$("miniDL_right").style.display="block";
+	$("miniDL_left_cls").style.display="block";
+	$("miniDL_right_cls").style.display="block";
+    $("miniDL_left").onmouseover=function(){show_out();}
+    $("miniDL_right").onmouseover=function(){show_out();}
+	$("miniDL_left_cls").onclick=function(){hide_miniDL();}
+	$("miniDL_right_cls").onclick=function(){hide_miniDL();}
+	$("miniDL_cls").onclick=function(){hide_out();doclose=true;}
+  }else{
+	miniDL_init_st=setTimeout("init_miniDL();",50);
+  }
+}
+
+
+//轮播函数
+if(typeof(miniRotatorDL)!='function'){
+
+
+var miniRotatorDL = function(minirdl,minidiv_id){
+
+var date = new Date();
+var id = 0;
+var max = 99;
+var url = document.location.href;
+var cookiename = 'sinaRotatorDL'+escape(url.substr(url.indexOf('/',7),2));
+var timeout = 1440; //24h
+var w = minirdl.width;
+var h = minirdl.height;
+var num = minirdl.num;
+var ary = new Array();
+//过滤无效广告
+for(var i=0; i<minirdl.length; i++){
+	var start = strToDate(minirdl[i][2].replace('<startdate>','').replace('</startdate>',''));
+	var end = strToDate(minirdl[i][3].replace('<enddate>','').replace('</enddate>',''),true);
+	if(date>start && date<end){
+		
+		ary.push([minirdl[i][0], minirdl[i][1], minirdl[i][4], minirdl[i][5]?minirdl[i][5]:0]);
+	}
+}
+
+//排序(同步有序号的广告)
+ary.sort(function(x,y){return (x[3]>y[3])?1:-1;});
+
+//取id
+if(typeof(globalRotatorId)=='undefined' || globalRotatorId==null || isNaN(globalRotatorId)){
+	curId = G(cookiename);
+	curId = curId==''?Math.floor(Math.random()*max):++curId;
+	if(curId>max || curId==null || isNaN(curId)) curId=0;
+	S(cookiename,curId,timeout);
+	globalRotatorId = curId;
+}
+
+id=globalRotatorId%num+1;
+
+//Show AD
+try{
+
+if(id<=minirdl.length){
+
+document.write(miniDL_html);
+var n = id-1;
+var type = ary[n][0].substring(ary[n][0].length-3).toLowerCase();
+var od = document.getElementById(minidiv_id);
+
+/*
+try{
+	aryADSeq.push("init_miniDL()");
+}catch(e){
+	init_miniDL();
+}
+*/
+
+init_miniDL();
+
+if(type=='swf'){
+	var of = new sinaFlash(ary[n][0], minidiv_id+'_swf', w, h, "7", "", false, "High");
+	of.addParam("wmode", "opaque");
+	of.addVariable("adlink", escape(ary[n][1]));
+	of.write(minidiv_id);
+}else if(type=='jpg' || type=='gif'){
+	od.innerHTML = '<a href="'+ary[n][1]+'" target="_blank"><img src="'+ary[n][0]+'" border="0" width="'+w+'" height="'+h+'" /></a>';
+}else if(type=='htm' || type=='tml'){
+	od.innerHTML = '<iframe id="ifm_'+minidiv_id+'" frameborder="0" scrolling="no" width="'+w+'" height="'+h+'"></iframe>';
+	document.getElementById('ifm_'+minidiv_id).src = ary[n][0];
+}else if(type=='.js'){ //js
+	document.write('<script language="javascript" type="text/javascript" src="'+ary[n][0]+'"></scr'+'ipt>');
+}else{ //textlink
+	document.write('<a href="'+ary[n][1]+'"  target="_blank">'+ary[n][0]+'</a>');
+}
+if(ary[n][2]!="" && ary[n][2]!=null){ //ad tracker
+	var oImg = new Image();
+	oImg.src = ary[n][2];
+}
+
+}else return;
+
+}catch(e){}
+
+function G(N){
+	var c=document.cookie.split("; ");
+	for(var i=0;i<c.length;i++){
+		var d=c[i].split("=");
+		if(d[0]==N)return unescape(d[1]);
+	}return '';
+};
+function S(N,V,Q){
+	var L=new Date();
+	var z=new Date(L.getTime()+Q*60000);
+	var d = document.domain!=""?("domain="+document.domain+";"):"";
+	document.cookie=N+"="+escape(V)+";path=/;"+d+"expires="+z.toGMTString()+";";
+};
+function strToDate(str,ext){
+	var arys = new Array();
+	arys = str.split('-');
+	var newDate = new Date(arys[0],arys[1]-1,arys[2],9,0,0);
+	if(ext){
+		newDate = new Date(newDate.getTime()+1000*60*60*24);
+	}
+	return newDate;
+}
+
+}
+}
+
+var minirdll = new Array();
+minirdll.width = 20; 
+minirdll.height = 350;
+
+var minirdlr = new Array();
+minirdlr.width = 20; 
+minirdlr.height = 350;
+
+var minirdlc = new Array();
+minirdlc.width = 585; 
+minirdlc.height = 90;

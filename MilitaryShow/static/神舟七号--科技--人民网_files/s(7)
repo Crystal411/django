@@ -1,0 +1,14 @@
+document.write("<SCRIPT LANGUAGE=\"Javascript\">\n");
+document.write("ADFHOST18286=\"http://pmm.people.com.cn\";\n");
+document.write("ADFCID18286=2291;\n");
+document.write("ADFBID18286=18286;\n");
+document.write("ADFUSER18286=\"http://pmm.people.com.cn/c?d=people&i=z2291,988882,18286&k=&p=0&v=58379708&rf=http%3A%2F%2Fwww%2Epeople%2Ecom%2Ecn%2F&u=\";\n");
+document.write("</SCR"+"IPT>\n");
+document.write("<p><a href=\"http://zhouenlai.people.com.cn/\" target=\"_blank\">&#21608;&#24681;&#26469;&#32426;&#24565;&#32593;</a>|<a href=\"http://www.dengxiaopingnet.com/\" target=\"_blank\">&#37011;&#23567;&#24179;&#32426;&#24565;&#32593;</a>|<a href=\"https://www.2021chengdu.com/cn/\" target=\"_blank\">&#25104;&#37117;&#22823;&#36816;&#20250;</a>|<br><a href=\"http://www.tongzhou.gov.cn/\" target=\"_blank\">&#20013;&#22269;&#36890;&#24030;</a></P>\n");
+document.write("\n");
+document.write("\n");
+document.write("<!--\n");
+document.write("\n");
+document.write("<a href=\"http://djy.people.com.cn/\" target=\"_blank\">&#20154;&#27665;&#20826;&#24314;&#20113;</a>|<a href=\"http://liuyan.people.com.cn/\" target=\"_blank\">&#39046;&#23548;&#30041;&#35328;&#26495;</a>|<a href=\"http://rmfp.people.com.cn/n1/2020/0413/c406725-31671862.html?from=timeline\" target=\"_blank\">&#31532;&#19977;&#23626;&#20013;&#22269;&#20248;&#31168;&#25206;&#36139;&#26696;&#20363;&#25253;&#21578;&#20250;</a>\n");
+document.write("\n");
+document.write("-->");

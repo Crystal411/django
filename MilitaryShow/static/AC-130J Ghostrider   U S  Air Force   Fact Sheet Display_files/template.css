@@ -1,0 +1,159 @@
+﻿/*****************/
+/*DGov CSS*/
+/***************/
+
+/*Main*/
+div.DGovFeedMain
+{
+    font-size:62.5%;
+    margin-top: .1em;                    
+    width: 100%;
+    background:white;
+    /*max-width:400px;*/
+}
+
+/*Feed*/
+div.DGovFeedOuterPane
+{
+    border: lightgray solid thin;
+    padding: .5em;
+    -moz-box-shadow: inset 0 0 1em .1em #DCE5EC;
+    -webkit-box-shadow: inset 0 0 1em .1em #DCE5EC;
+    box-shadow: inset 0 0 1em .1em #DCE5EC;
+    border-radius: .5em;
+}
+
+div.DGovFeedPane
+{
+    height: 100%;
+    overflow-y: auto;
+    padding-right: .2em;
+    overflow-x: hidden;
+    max-height:600px;
+}
+
+div.DGovFeedItem
+{
+
+}
+div.DGovFeedFirst
+{
+    width: 10%;
+    vertical-align:top;
+    max-width:30px;
+    display:inline-block;
+}
+div.DGovFeedFirst span
+{
+    display:inline-block;
+    padding-left:10%;
+}
+div.DGovFeedFirst img
+{
+    width:80%;
+    height:auto;
+    /*padding-top:50%;*/
+}
+
+div.DGovFeedSecond
+{
+    width: 20%;
+    vertical-align:top;
+    overflow: hidden;
+    display:inline-block;
+    max-width:60px;
+}
+div.DGovFeedSecond div img
+{
+    height:auto;
+    width:auto;
+    max-height:100%;
+    max-width:100%;
+    margin-left:auto;
+    margin-right:auto;
+    display:block;
+}
+
+div.DGovFeedThird
+{
+        vertical-align: top;
+        margin-left: .5em;
+        font-size: 1.2em;
+        line-height: normal;
+        display: inline-block;
+}
+
+div.DGovFeedThird div a
+{
+    color:#084476;
+    text-decoration: none !important;
+    font-weight: 500;
+}
+
+div.DGovFeedThird div a.DGovPostTitle
+{
+    font-weight:bold !important;
+}
+
+div.DGovFeedThird .DGovTwitterText
+{
+    color:rgb(35,35,35);
+}
+div.DGovFeedSep
+{
+    border-bottom: 1px solid #DCE5EC;                   
+    margin-bottom: 1em;
+    margin-top: 1em
+}
+
+/*Panel*/
+div.DGovPanelPane
+{
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+div.DGovPanelFacebook
+{
+    float: left;
+    width:50%;
+}
+div.DGovPanelFacebook img, div.DGovPanelTwitter img
+{
+    width:25%;
+    display:inline-block;
+    vertical-align:top;
+    max-width:60px;
+}
+
+div.DGovPanelTwitter
+{
+    float: left;
+    width:50%;
+}
+div.DGovPanelSocialStats
+{
+    display:inline-block;
+    margin-left: .5em;
+    width:65%;
+}
+div.DGovPanelSocialText
+{
+    color: #001a53;
+    font-size: 2em;
+    font-weight: bold;
+}
+.DGovPanelSocialStats a.DGovPanelFacebookLike img,
+.DGovPanelSocialStats a.DGovPanelTwitterFollow img
+{
+    width:100%;
+    height:auto;
+}
+.DGovPanelSocialStats a.DGovPanelFacebookLike img
+{
+    max-width:60px;
+}
+.DGovPanelSocialStats a.DGovPanelTwitterFollow img
+{
+    max-width:70px;
+}

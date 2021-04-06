@@ -1,0 +1,65 @@
+function showMen(n){
+	for(var i=1;i<=2;i++){
+		var curCon=document.getElementById("pic_"+i);
+		var curBtn=document.getElementById("picb_"+i);
+		if(n==i){
+			curBtn.style.display="block";
+			curCon.className="one"
+		}else{
+			curBtn.style.display="none";
+			curCon.className="";			
+		}
+	}
+}
+function showNew(n){
+	for(var i=1;i<=7;i++){
+		var curBtn=document.getElementById("new_"+i);
+		var curCon=document.getElementById("new_c_"+i);
+		if(n==i){
+			curCon.style.display="block";
+			curBtn.className="one";
+		}else{
+			curCon.style.display="none";
+			curBtn.className="";
+		}
+	}
+}
+function showNews(n){
+	for(var i=1;i<=5;i++){
+		var curBtn=document.getElementById("news_"+i);
+		var curCon=document.getElementById("news_c_"+i);
+		if(n==i){
+			curCon.style.display="block";
+			curBtn.className="one";
+		}else{
+			curCon.style.display="none";
+			curBtn.className="";
+		}
+	}
+}
+function showkey(n){
+	for(var i=1;i<=8;i++){
+		var curBtn=document.getElementById("key_"+i);
+		var curCon=document.getElementById("key_c_"+i);
+		if(n==i){
+			curCon.style.display="block";
+			curBtn.className="one";
+		}else{
+			curCon.style.display="none";
+			curBtn.className="";
+		}
+	}
+}
+function showkey1(n){
+	for(var i=1;i<=7;i++){
+		var curBtn=document.getElementById("key1_"+i);
+		var curCon=document.getElementById("key1_c_"+i);
+		if(n==i){
+			curCon.style.display="block";
+			curBtn.className="one";
+		}else{
+			curCon.style.display="none";
+			curBtn.className="";
+		}
+	}
+}

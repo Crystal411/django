@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0049)http://scitech.people.com.cn/img/szqh/data01.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
+
+<title>神七报道</title>
+</head>
+<body style="background:#004587;" marginwidth="0" marginheight="0">
+<table cellpadding="0" cellspacing="0" border="0">
+	<tbody><tr>
+		<td><select name="college_provid1" id="college_provid1" style="width:80px;"><option value="分类,">神七报道</option><option value="宇航员,http://scitech.people.com.cn/GB/132659/132685/132686/index.html,幕后英雄,http://scitech.people.com.cn/GB/132659/132685/132687/index.html,少帅,http://scitech.people.com.cn/GB/132659/132685/132688/index.html">人物</option><option value="快讯,http://scitech.people.com.cn/GB/132659/132689/132690/index.html,追踪,http://scitech.people.com.cn/GB/132659/132689/132692/index.html,解读,http://scitech.people.com.cn/GB/132659/132689/132693/index.html,花絮,http://scitech.people.com.cn/GB/132659/132689/132851/index.html">新闻</option><option value="人民时评,http://scitech.people.com.cn/GB/132659/132694/132695/index.html,外电,http://scitech.people.com.cn/GB/132659/132694/132696/index.html,媒体视点,http://scitech.people.com.cn/GB/132659/132694/132697/index.html,网友,http://scitech.people.com.cn/GB/132659/132694/132698/index.html,博客,http://scitech.people.com.cn/GB/132659/132694/132699/index.html,无线,http://scitech.people.com.cn/GB/132659/132694/132700/index.html">评论</option><option value="心理测试,http://scitech.people.com.cn/GB/132659/132701/132730/index.html,留言墙,http://scitech.people.com.cn/GB/132659/132701/134307/index.html,合影/证书,http://scitech.people.com.cn/GB/132659/132701/132741/index.html,发射场,http://scitech.people.com.cn/GB/132659/132701/132749/134635/index.html">互动体验</option></select>&nbsp;</td>
+		<td><select name="collegeid1" id="collegeid1" style="width:70px;"><option value="">分类</option></select>&nbsp;</td>
+		<td><input type="image" name="imageField" value="搜" src="./sz_search.jpg" onclick="multiLevelMenu_college2();"></td>
+	</tr>
+</tbody></table>
+<script>
+var arrSel_college1 = ['college_provid1','collegeid1'];
+
+menu_college =  [ '神七报道',[
+     '分类',''
+     ], 
+     '人物',[
+     '宇航员','http://scitech.people.com.cn/GB/132659/132685/132686/index.html',
+     '幕后英雄','http://scitech.people.com.cn/GB/132659/132685/132687/index.html',
+     '少帅','http://scitech.people.com.cn/GB/132659/132685/132688/index.html',
+     
+     ],
+        '新闻',[
+        '快讯','http://scitech.people.com.cn/GB/132659/132689/132690/index.html',
+        '追踪','http://scitech.people.com.cn/GB/132659/132689/132692/index.html',
+        '解读','http://scitech.people.com.cn/GB/132659/132689/132693/index.html',
+        '花絮','http://scitech.people.com.cn/GB/132659/132689/132851/index.html',
+        
+        ],
+        '评论',[
+        '人民时评','http://scitech.people.com.cn/GB/132659/132694/132695/index.html',
+        '外电','http://scitech.people.com.cn/GB/132659/132694/132696/index.html',
+        '媒体视点','http://scitech.people.com.cn/GB/132659/132694/132697/index.html',
+        '网友','http://scitech.people.com.cn/GB/132659/132694/132698/index.html',
+        '博客','http://scitech.people.com.cn/GB/132659/132694/132699/index.html',
+        '无线','http://scitech.people.com.cn/GB/132659/132694/132700/index.html',
+        
+        ],
+        '互动体验',[
+        '心理测试','http://scitech.people.com.cn/GB/132659/132701/132730/index.html',
+        '留言墙','http://scitech.people.com.cn/GB/132659/132701/134307/index.html',
+        '合影/证书','http://scitech.people.com.cn/GB/132659/132701/132741/index.html',
+        '发射场','http://scitech.people.com.cn/GB/132659/132701/132749/134635/index.html',
+        ]
+     ]
+     
+     function multiLevelMenu_college1(level){
+        obj=document.getElementById(arrSel_college1[level]);
+		if(obj)
+		{
+			subMenu_Name = "menu_college";
+			for(i=0;i<level;i++)
+			{
+				subMenu_Name += "[" + (document.getElementById(arrSel_college1[i]).selectedIndex*2 + 1) + "]";
+			}
+			
+			subMenu = eval(subMenu_Name);
+			//alert (subMenu_Name);
+			//if(!subMenu) return false;
+			
+			
+			sel_len = obj.length;
+			for(i=0;i<sel_len;i++)
+			{
+				obj.options.remove(0);
+			}
+
+			new_sel_len = Math.floor(subMenu.length/2);
+
+			for(i=0;i<new_sel_len;i++)
+			{
+				obj.options.add(new Option(subMenu[i*2],subMenu[i*2+1]));
+			}
+			
+			obj.onchange = Function("multiLevelMenu_college1(" + (level+1) + ")");
+
+			multiLevelMenu_college1(level+1);
+		}
+		else
+		{
+
+			return false;
+		}	
+     }
+     
+     function multiLevelMenu_college2(){
+        var i;
+	    switch(document.all.college_provid1.options[document.all.college_provid1.selectedIndex].text){
+	       case menu_college[document.all.college_provid1.selectedIndex*2]:
+	          { switch(document.all.collegeid1.options[document.all.collegeid1.selectedIndex].text){
+	                case menu_college[document.all.college_provid1.selectedIndex*2 + 1][document.all.collegeid1.selectedIndex*2]:
+	                   if(menu_college[document.all.college_provid1.selectedIndex*2 + 1][document.all.collegeid1.selectedIndex*2 + 1]){
+	                      window.open(menu_college[document.all.college_provid1.selectedIndex*2 + 1][document.all.collegeid1.selectedIndex*2 + 1]);
+	                   }
+	                   else alert('请做出您的选择!');
+	            } 
+	          }
+	    }
+     }
+     
+     multiLevelMenu_college1(0);
+</script>
+
+</body></html>

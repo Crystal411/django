@@ -1,0 +1,74 @@
+body {  font-family: "宋体"; font-size: 12px}
+td {  font-size: 12px; color: #000000}
+p {  line-height: 120%}
+
+.l14 {  line-height: 140%}
+.l12bl {  line-height: 140% ; color: #333399}
+.l16 {  line-height: 160%}
+
+.imgb {border-color:#000000;} 
+.imgw {border-color:#ffffff;} 
+.imgy {border-color:#657DE9;} 
+
+.t14l12redb {	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #225982}
+
+A.al:link {	FONT-SIZE: 14px; COLOR: #000000; LINE-HEIGHT: 150%; TEXT-DECORATION: none}
+A.al:visited {	FONT-SIZE: 14px; COLOR: #383838; LINE-HEIGHT: 150%; TEXT-DECORATION: none}
+A.al:hover {	FONT-SIZE: 14px; COLOR: #ff0000; LINE-HEIGHT: 150%;text-decoration: underline}
+
+.ftitle {
+	FONT-WEIGHT: bold; FONT-SIZE: 23px; COLOR: #79390B; LINE-HEIGHT: 40px
+}
+.fbody {
+	FONT-SIZE: 14px; COLOR: #000000; LINE-HEIGHT: 140%
+}
+.fsubtitle {
+	COLOR: #79390B; LINE-HEIGHT: 140%
+}
+.fwriter {
+	COLOR: #79390B; LINE-HEIGHT: 40px
+}
+
+/* 以上属于通用样式 */
+
+a:link {  color: #1B2036; text-decoration: none}
+a:visited {  color: #4A4A4A; text-decoration: none}
+a:hover {  color: #000000; text-decoration: underline}
+
+a.abl:link {  color: #456BBC; text-decoration: none}
+a.abl:visited {  color: #000099; text-decoration: none}
+a.abl:hover {  color: #000000; text-decoration: underline}
+
+a.abl1:link {  color: #C9CDE0; text-decoration: none}
+a.abl1:visited {  color: #D5D5D5; text-decoration: none}
+a.abl1:hover {  color: #ffffff; text-decoration: underline}
+
+a.abl2:link {  color: #456BBC; text-decoration: none}
+a.abl2:visited {  color: #000099; text-decoration: none}
+a.abl2:hover {  color: #000000; text-decoration: underline}
+
+a.abl3:link {  color: #C9CDE0; text-decoration: none}
+a.abl3:visited {  color: #CDCDCD; text-decoration: none}
+a.abl3:hover {  color: #ffffff; text-decoration: underline}
+
+a.awht:link {  color: #ffffff; text-decoration: none}
+a.awht:visited {  color: #ffffff; text-decoration: none}
+a.awht:hover {  color: #FFFFCC; text-decoration: underline}
+
+a.aylw:link {  color: #FDFFBC; text-decoration: none}
+a.aylw:visited {  color: #FDFFBC; text-decoration: none}
+a.aylw:hover {  color: #FFffff; text-decoration: underline}
+
+a.agray:link {  color: #B4B6BD; text-decoration: none}
+a.agray:visited {  color: #B4B6BD; text-decoration: none}
+a.agray:hover {  color: #FFffff; text-decoration: underline}
+
+
+
+
+
+.t14l14 { line-height: 140% ; font-size: 14px}
+.t14l14wht { line-height: 140%; font-size: 14px; color: #ffffff}
+.t12l17gray { line-height: 170%; font-size: 12px; color: #B4B6BD}
+.t14l14bl1 { line-height: 170%; font-size: 13px; color: #C2CBF4}
+.t12l14wht { line-height: 140%; font-size: 12px; color: #ffffff}

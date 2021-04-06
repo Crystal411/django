@@ -1,0 +1,15 @@
+document.write("<SCRIPT LANGUAGE=\"Javascript\">\n");
+document.write("ADFHOST18292=\"http://pmm.people.com.cn\";\n");
+document.write("ADFCID18292=2295;\n");
+document.write("ADFBID18292=18292;\n");
+document.write("ADFUSER18292=\"http://pmm.people.com.cn/c?d=people&i=z2295,989617,18292&k=&p=0&v=58041823&rf=http%3A%2F%2Fwww%2Epeople%2Ecom%2Ecn%2F&u=http://djy.people.com.cn/\";\n");
+document.write("</SCR"+"IPT>\n");
+document.write("<script type=\"text/javascript\">\n");
+document.write("var picUrl=\"djy560115-1228.jpg\";\n");
+document.write("var picwidth=560;\n");
+document.write("var picheight=115;\n");
+document.write("var thirdlink=\"\";\n");
+document.write("var parLeft=picwidth-38;\n");
+document.write("\n");
+document.write("document.write(\"<div style='overflow:hidden; position:relative;'><div style='overflow:hidden;'><a href='\"+ADFUSER18292+\"' target='_blank'><img src='http://www.people.com.cn/adv/\"+picUrl+\"' width='\"+picwidth+\"px' height='\"+picheight+\"px' border=0 alt=''></a></div><div style='position:absolute; right:0px; top:0px; z-index:9999; width:39px; height:25px'><img src='\"+thirdlink+\"' style='display:none;width:0;height:0' /></div></div>\");\n");
+document.write("</Scr"+"ipt>");
