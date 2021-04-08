@@ -36,18 +36,25 @@ def getlist(search,result):
 
     path = "htmls"
 
-    directory = path+"/"+str(search) #打开关键字对应目录
+    directory = path+"/"+str(search)#打开关键字对应目录
     files = os.listdir(directory)#列出该目录下所有文件名
     for filename in files:
         if os.path.isfile(directory+"/"+filename):
             print(filename)
             length=len(filename)
-            # title=filename[:length-6]
-            title = filename
-            description="abstract"
+            title=filename[:length-5]
+            # title = filename
+
+            readabstract=directory+"/摘要/"+title+".txt"
+            abstract = open(readabstract,"r",encoding="utf-8")
+            description=abstract.read()
+
+            # description="abstract"
             keywords="key1 key2"
             # origin="localhost:8000"+"/"+"static"+"/"+search+"/"+filename
-            origin = "http://127.0.0.1:8000/static/"+ filename
+            # origin = "http://127.0.0.1:8000/static/" + filename
+
+            origin = "http://127.0.0.1:8080/"+search+"/"+filename #通过nginx访问
             dictt={
                 "title":title,
                 "description":description,

@@ -1,0 +1,58 @@
+body {  font-family: "ËÎÌו"; font-size: 12px}
+td {  font-size: 12px; color: #B2B2B2}
+p {  line-height: 120%}
+
+a:link {  color: #BAD1E8; text-decoration: none}
+a:visited {  color: #F2F2F4; text-decoration: none}
+a:hover {  color: #F2F2F4; text-decoration: underline}
+
+a.abl1:link {  color: #C4CCFF; text-decoration: none}
+a.abl1:visited {  color: #DDE1FF; text-decoration: none}
+a.abl1:hover {  color: #FFFFFF; text-decoration: underline}
+
+a.abl2:link {  color: #7CCCDB; text-decoration: none}
+a.abl2:visited {  color: #DDE1FF; text-decoration: none}
+a.abl2:hover {  color: #FFFFFF; text-decoration: underline}
+
+a.abl3:link {  color: #1A2DDE; text-decoration: none}
+a.abl3:visited {  color: #000000; text-decoration: none}
+a.abl3:hover {  color: #000000; text-decoration: underline}
+
+a.abl4:link {  color: #99D2FF; text-decoration: none}
+a.abl4:visited {  color: #99D2FF; text-decoration: none}
+a.abl4:hover {  color: #FFFFFF; text-decoration: underline}
+
+a.agray:link {  color: #8D90A3; text-decoration: none}
+a.agray:visited {  color: #E1E1E1; text-decoration: none}
+a.agray:hover {  color: #FFFFFF; text-decoration: underline}
+
+a.aylw:link {  color: #FFC26C; text-decoration: none; font-size: 12px}
+a.aylw:visited {  color: #FFFFCC; text-decoration: none; font-size: 12px}
+a.aylw:hover {  color: #FFFFCC; font-size: 12px}
+
+a.awhite:link {  color: #FFFFFF; text-decoration: none}
+a.awhite:visited {  color: #FFFFFF; text-decoration: none}
+a.awhite:hover {  color: #FFFFCC; text-decoration: underline}
+
+a.anavy:link {  color: #B2B2B2; text-decoration: none}
+a.anavy:visited {  color: #B2B2B2; text-decoration: none}
+a.anavy:hover {  color: #FFFFFF; text-decoration: underline}
+
+a.ared:link {  color: #CB0101; text-decoration: none}
+a.ared:visited {  color: #C61400; text-decoration: none}
+a.ared:hover {  color: #FF0000; text-decoration: underline}
+
+input {  height: 19}
+.l14 {  line-height: 140%}
+.l16 {  line-height: 160%}
+
+.imgb {color:#000000;border-color:#000000;} .t12l14red { line-height: 140%; color: #C61400}
+.imgw {color:#ffffff;border-color:#ffffff;}
+
+.t12l14blue1 { line-height: 140%; color: #C4CCFF}
+.t14l14org { line-height: 140%; color: #FFC26C; font-size: 14px}
+.t12l14news { line-height: 140%; color: #bad1e8}
+.t12l14blue3 { line-height: 140%; color: #1a2dde}
+.t14l12redb { line-height: 140% ; font-size: 14px}
+.t14l14blue { line-height: 140%; color: #BAD1E8; font-size: 14px}
+.t12l14wht { line-height: 140%; color: #FFFFFF}
